@@ -12,23 +12,8 @@
 			<div class="logo">
 				<a href="./">Zero Type</a>
 			</div>
-			<ul id="navigation">
-				<li>
-					<a href="./">Home</a>
-				</li>
-				<li>
-					<a href="./features">Features</a>
-				</li>
-				<li>
-					<a href="./news">News</a>
-				</li>
-                                <li ><!--class="active"-->
-					<a href="./about">About</a>
-				</li>
-				<li>
-					<a href="./contact">Contact</a>
-				</li>
-			</ul>
+                    {menubar}
+			
 		</div>
 	</div>
 	<div id="contents">

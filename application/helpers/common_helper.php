@@ -63,14 +63,25 @@ function endsWith($string, $ending)
  * Assumption: that the URL helper has been loaded.
  * @param type $choices Array of name=>link pairs
  */
-function build_menu_bar($choices)
-{
-    $result = '<ul>';
-    foreach ($choices as $name => $link)
-	$result .= '<li>' . anchor($link, $name) . '</ul>';
-    $result .= '</ul>';
-    return $result;
-}
+function build_menu_bar($choices, $pagetitle)
+    {
+         $result = '<ul id="navigation">';
+
+        foreach ($choices as $name => $link) 
+        {
+         $selected = "";
+
+            if (strcmp($pagetitle, $name) == 0){
+                $selected = 'class="active"';
+            }
+
+            $result .= '<li '. $selected.'>' . anchor($link, $name) . '</li>';
+
+        }
+        $result .= "</ul>";
+        return $result;
+
+    }
 
 /* End of file common_helper.php */
 /* Location: application/helpers/common_helper.php */

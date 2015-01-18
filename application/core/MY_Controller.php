@@ -22,20 +22,26 @@ class Application extends CI_Controller {
     {
 	parent::__construct();
 	$this->data = array();
-        $this->data['pagetitle'] = 'Zerotype Website Template';
     }
 
     /**
      * Render this page
      */
-    function render()
+    function render($pagetitle)
     {
-	$this->data['menubar'] = build_menu_bar($this->choices);
+        $this->data['menubar'] = build_menu_bar($this->choices, $pagetitle);
+        if(strcmp($pagetitle,"Home") == 0 ){
+            $pagetitle = "";
+        }else{ 
+            $pagetitle .=" - ";
+        }
+        $this->data['pagetitle'] = $pagetitle.'Zerotype Website Template';
         $this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
         $this->data['data'] = &$this->data;
 	$this->parser->parse('template', $this->data);
     }
-
+    
+    
 }
 
 /* End of file MY_Controller.php */

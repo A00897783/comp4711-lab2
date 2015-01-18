@@ -56,8 +56,16 @@ class Welcome extends Application {
 	 */
 	public function index()
 	{
+            
+            $id = 1;
+            $pic = $this->images->getImg($id);
+            $pic = reset($pic)->filename;
+            $img = "<img src='images/".$pic."' alt='".$pic."'>";
+            $this->data['img'] = $img;
+            			
+
              $this->data['pagebody'] = 'welcome';
-                $this->render();
+                $this->render("Home");
 	}
 }
 

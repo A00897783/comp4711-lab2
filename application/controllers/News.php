@@ -8,6 +8,6 @@ class News extends Application {
 	public function index()
 	{
 		$this->data['pagebody'] = 'news';
-                $this->render();
+                $this->render("News");
 	}
 }

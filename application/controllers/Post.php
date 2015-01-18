@@ -8,6 +8,6 @@ class Post extends Application {
 	public function index()
 	{
 		$this->data['pagebody'] = 'post';
-                $this->render();
+                $this->render("News");
 	}
 }

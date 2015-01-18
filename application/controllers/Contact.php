@@ -8,6 +8,6 @@ class Contact extends Application {
 	public function index()
 	{
 		$this->data['pagebody'] = 'contact';
-                $this->render();
+                $this->render("Contact");
 	}
 }
